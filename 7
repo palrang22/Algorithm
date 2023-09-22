@@ -1,0 +1,127 @@
+# #1
+
+# A, B, C = map(int, input().split())
+
+# if B >=C:
+#     print ('-1')
+    
+# else:
+#     BEP = A // (C-B) + 1
+#     print(BEP)
+
+
+# #2
+# import sys
+# N = int(sys.stdin.readline())
+
+# i = 1
+# b = 1
+# while True:
+#     a= 6*i
+#     if N > b:
+#         b = b+a
+#         i += 1
+#     else:
+#         print(i)
+#         break
+
+
+
+# #3
+
+# X = int(input())
+# n = 0
+
+# while True:
+#     X = X - n
+#     n +=1
+      
+#     if X - n > 0:
+#         continue
+        
+#     elif X - n <= 0:
+#         break
+
+# up = X
+# down = n-X+1
+
+# if n % 2 == 0:
+#     print(f'{up}/{down}')
+
+# else:
+#     print(f'{down}/{up}')
+
+
+
+# #4
+
+# # while True:
+# #     if (A-B)*day < V-A:
+# #         day += 1
+# #         continue
+    
+# #     elif (A-B)*day >= V-A:
+# #         print(day+1)
+# #         break
+
+# # day = 1
+# # while True:
+    
+# #     if V <= A :
+# #         print('1')
+# #         break
+        
+# #     else:
+# #         if V-A <= (A-B)* day:
+# #             print(day+1)
+# #             break
+# #         else:
+# #             day +=1
+
+# ##맞는풀이##
+# import sys
+# import math
+
+# A , B, V = map(int, sys.stdin.readline().split())
+           
+# k = (V-A) / (A-B)
+# print(math.ceil(k)+1)
+
+
+# # i= 1
+# # j = 0
+# # H = A*i - B*j
+
+# # while True:
+    
+# #     if H >= V:
+# #         break
+# #     else:
+# #         j += 1
+# #         i += 1
+# #         print(H)
+# #         continue
+    
+    
+# # print(i)
+
+
+#5
+# import sys
+
+# T = int(input())
+# H, W, N = map(int, sys.stdin.readline().split())
+# HH = 1
+# a = N
+# b = H
+# while True:
+#     if H == 0:
+#         break
+#     else:       
+#         a - 1
+#         b -= 1
+#         if b == 0:
+#             HH += 1
+#         break
+
+# print(str(N // H) + str(0)+str(HH))        

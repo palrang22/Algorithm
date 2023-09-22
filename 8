@@ -1,0 +1,146 @@
+# #1
+# #for-else 문은 for 문에서 break되었을 때, else문으로 넘어가져서 사용
+# n = int(input())
+# nums = list(map(int, input().split()))
+# count = 0
+
+# for i in nums:
+#     if i != 1:
+#         for j in range (2,i):
+#             if i%j == 0:
+#                 break
+        
+#         else:
+#             count +=1
+                
+# print(count)
+
+
+# #2
+# n_min = int(input())
+# n_max = int(input())
+# mm_list = []
+
+# for i in range(n_min, n_max+1):
+#     if i != 1:
+#         for j in range (2,i):
+#             if i%j == 0:
+#                     break
+        
+#         else:
+#             mm_list.append(i)
+
+# if len(mm_list) == 0:
+#     print('-1')
+# else:        
+#     print(sum(mm_list), min(mm_list))
+
+
+#3
+
+# N = int(input())
+
+# if N != 1:
+#     for i in range (2,N+1):
+#         while N % i == 0:
+#             N = N//i
+#             print(i)
+
+
+# #4
+# #코드 시간 단축(최적화) : 이중for문 제거, 함수 사용, 라이브러리 사용 시 dot연산 최대한 피하기 (이름 호출)
+# #if 사용 조건 최적화, while 문을 for 문으로 대체, import numba
+
+# import math as mt
+
+# def is_prime(num):
+#     if num == 1:
+#         return False
+#     else:
+#         for i in range (2,int(mt.sqrt(num))+1):
+#             if num % i == 0:
+#                 return False
+#         return True
+
+# n_min, n_max = map(int, input().split())
+
+# for i in range(n_min, n_max+1):
+#     if is_prime(i):
+#         print(i)
+        
+        
+# #5
+# #범위 최적화 전
+# from math import sqrt
+
+# def is_prime(num):
+#     if num == 1:
+#         return False
+#     else:
+#         for i in range (2,int(sqrt(num))+1):
+#             if num % i == 0:
+#                 return False
+#         return True
+
+# # while True:
+# #     N = int(input())
+# #     if N == 0:
+# #         break
+# #     else:
+# #         count = 0
+# #         for i in range (N+1, 2*N):
+# #             if is_prime(i):
+# #                 count +=1
+# #         print(count)
+        
+        
+# #범위 고려
+# prime_list = []
+# for a in range (1,123456*2+1):
+#     if is_prime(a):
+#         prime_list.append(a)
+        
+# while True:
+#     N = int(input())
+#     count = 0
+#     if N == 0:
+#         break
+#     else:
+#         for b in prime_list:
+#             if N < b and b <= 2*N:
+#                 count +=1
+#     print(count)
+
+
+#6
+from math import sqrt
+
+def is_prime(num):
+        if num == 1:
+            return False
+        else:
+            for i in range (2,int(sqrt(num))+1):
+                if num % i == 0:
+                    return False
+            return True
+    
+prime_list = []
+
+for a in range (1,10001):
+    if is_prime(a):
+        prime_list.append(a)
+        
+trial = int(input())
+
+for c in range(trial):
+    N = int(input())
+    new_list = []
+    for d in prime_list:
+        if N - d in prime_list:
+            new_list.append(N-d)
+                
+    D = new_list[(len(new_list)//2)]
+    print (D, N-D)
+            
+
+

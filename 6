@@ -1,0 +1,156 @@
+# #1
+# n = input()
+
+# print(ord(n))
+
+
+# #2
+# digits = int(input())
+# num = int(input())
+
+# list_num= list(map(int, str(num)))
+# sum_num = sum(list_num)
+# print(sum_num)
+
+
+# #3
+# S = str(input())
+
+# apb_list = []
+# for i in range(97,123):
+#     apb = chr(i)
+#     apb_list.append(apb)
+
+# for j in apb_list:
+#     index = S.find(j)
+#     print(index, end=' ')
+
+
+# #4
+
+# T = int(input())
+
+# for i in range(T):
+#     R, S = input().split()
+#     R = int(R)
+#     list_S = list(S)
+    
+#     for i in S:
+#        print(int(R) * i , end='')
+#     print()
+
+# #5
+
+# word = input().upper()
+
+# wd_set = set(word)
+# wd_list = list(word)
+
+# cnt = []
+# for i in wd_set:
+#     a = wd_list.count(i)
+#     cnt.append(a)
+    
+# if cnt.count(max(cnt)) > 1 :
+#     print('?')
+    
+# else:
+#     b = cnt.index(max(cnt))
+#     print(list(wd_set)[b])
+
+
+# # if len(count) != len(set(count)):
+# #     print ('?')
+# # else:
+# #     b = count.index(max(count))
+# #     wd_lstagain = list(wd_set)
+# #     c = wd_lstagain[b]
+# #     print(c)
+    
+
+# #6
+# wordList = input().split()
+
+# # setwordList = set(wordList)
+
+# # wordList = list(setwordList)
+
+# print(len(wordList))
+
+
+# #7
+# a, b = map(int, input().split())
+
+# new_a = list(str(a))
+# new_b = list(str(b))
+
+# new_a[0], new_a[2] = new_a[2], new_a[0]
+# new_b[0], new_b[2] = new_b[2], new_b[0]
+
+# n_a = int(new_a[0] + new_a[1] + new_a [2])
+# n_b = int(new_b[0] + new_b[1] + new_b [2])
+
+# if n_a > n_b:
+#     print (n_a)
+# else:
+#     print(n_b)
+
+
+# #8
+
+# dict = {3 : ("A","B","C"),
+# 4 : ("D","E","F"),
+# 5 : ("G","H","I"),
+# 6 : ("J","K","L"),
+# 7 : ("M","N","O"),
+# 8 : ("P","Q","R","S"),
+# 9 : ("T","U","V"),
+# 10 : ("W","X","Y","Z")}
+
+# word = input().upper()
+# sec = 0
+
+# for i in range(len(word)):
+#     for k, v in dict.items():
+#         if word[i] in v:
+#             sec += int(k)
+            
+# print(sec)
+
+
+# #9
+# apb = ['c=', 'c-', 'dz=', 'd-', 'lj', 'nj', 's=', 'z=']
+# word = input()
+
+# for i in apb :
+#     word = word.replace(i, '*')
+# print(len(word))
+
+
+# #10
+# # n = int(input())
+# # count = n
+# # for i in range(n):
+# #     word = input()
+# #     for j in range(0,len(word)-1):
+# #         if word[j] == word[j+1]:
+# #             pass
+# #         else:
+# #             count -= 1
+# #             break
+            
+# # print(count)
+
+# N = int(input())
+# cnt = N
+
+# for i in range(N):
+#     word = input()
+#     for j in range(0, len(word)-1):
+#         if word[j] == word[j+1]:
+#             pass
+#         elif word[j] in word[j+1:]:
+#             cnt -= 1
+#             break
+
+# print(cnt)

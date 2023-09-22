@@ -1,0 +1,186 @@
+# #1
+# number = int(input())
+
+# for i in range (1,10):
+#     print(number,'*',i,'=',number*i)
+
+
+# #2
+# n = int(input())
+
+# for i in range (1,n+1):
+#     a,b = map(int, input().split())
+#     print(a+b) 
+
+
+# #3
+# n = int(input())
+# i=1
+# j=0
+
+# while i<=n:
+#     j=j+i
+#     i=i+1
+
+# print(j)
+
+# #4
+# import sys
+# n = int(input())
+
+# for i in range (1,n+1):
+#     a,b = map(int, sys.stdin.readline().split())
+#     print(a+b)
+
+
+# #5
+# n = int(input())
+# i=1
+
+# while i<=n:
+#     print(i)
+#     i=i+1
+
+
+# #6
+# n = int(input())
+
+# while True:
+#     print(n)
+#     n=n-1
+#     if n==0:
+#         break
+
+
+
+# #7
+# import sys
+# n=int(input())
+
+# for i in range (1,n+1):
+#     a,b = map(int, sys.stdin.readline().split())
+#     # print('Case #',i,': ',a+b,sep='')
+#     print(f'Case #{i}: {a+b}')
+
+
+# #9
+# import sys
+# n=int(input())
+
+# for i in range (1,n+1):
+#     a,b = map(int, sys.stdin.readline().split())
+#     #print('Case #',i,': ',a,' + ',b,' = ',a+b,sep='')
+#     print(f'Case #{i}: {a} + {b} = {a+b}')
+
+
+# #10
+# n=int(input())
+# i = 1
+# for i in range (1,n+1):
+#     print(('*'*i).rjust(n))
+#     i=i+1
+    
+# #11
+# import sys
+# count, max = map(int, input().split())
+# numbers = list(map(int, sys.stdin.readline().split()))
+# j=[]
+
+# for i in range (1,count+1):
+#     if numbers[i-1] < max:
+#         j.append(numbers[i-1])
+#     else:
+#         i=i+1
+        
+# print(*j)
+
+
+# #11 더 쉬운풀이
+# import sys
+# count, max = map(int, input().split())
+# numbers = list(map(int, sys.stdin.readline().split()))
+
+# for i in range (len(numbers)):
+#     if numbers[i] < max:
+#         print(numbers[i], end=' ')
+
+
+# #12
+# import sys
+
+# while True:
+#         a, b = map(int, sys.stdin.readline().split())
+#         if a==0 and b==0:
+#             break
+#         print(a+b)
+
+
+# #13
+# #try, except (예외 처리)
+# import sys
+
+# while True:
+#     try:
+#         a, b = map(int, sys.stdin.readline().split())
+#         print(a+b)
+#     except:
+#         break
+    
+
+# #14 
+# n = int(input())
+# i = n
+# n_list=[]
+
+# if n==0:
+#     print('1')
+# elif n<=9:
+#     n=n*10+n
+#     while True:
+#         m = n//10 + n%10
+#         n = (n%10)*10 + m%10
+#         n_list.append(n)
+#         if n == i:
+#             print(len(n_list)+1)
+#             break
+    
+# else:
+#     while True:
+#         m = n//10 + n%10
+#         n = (n%10)*10 + m%10
+#         n_list.append(n)
+#         if n == i:
+#             print(len(n_list))
+#             break
+    
+    
+
+# #14 
+# n = int(input())
+# i = n
+# n_list=[]
+
+# # if n==0:
+# #     print('1')
+# # elif n<=9:
+# #     n=n*10+n
+# #     while True:
+# #         m = n//10 + n%10
+# #         n = (n%10)*10 + m%10
+# #         n_list.append(n)
+# #         if n == i:
+# #             print(len(n_list)+1)
+# #             break
+    
+# # else:
+# while True:
+#         m = n//10 + n%10
+#         n = (n%10)*10 + m%10
+#         n_list.append(n)
+#         if n == i:
+#             print(len(n_list))
+#             break    
+
+
+
+

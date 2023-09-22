@@ -1,0 +1,174 @@
+## 1, 2
+# import sys
+# n_row = int(input())
+# list_row=[]
+
+# for i in range(n_row):
+#     row = int(sys.stdin.readline())
+#     list_row.append(row)
+
+# list_row.sort()
+
+# for j in list_row:
+#     print(j)
+
+
+
+# #3 - 메모리초과 문제: 배열을 미리 만들어서 저장 (범위가 좁을 경우)
+# import sys
+# n_row = int(sys.stdin.readline())
+# lst = [0]*10000
+
+# for i in range (n_row):
+#     lst[int(sys.stdin.readline())-1] +=1
+    
+# for i in range(10000):
+#     for j in range(lst[i]):
+#         print(i+1)
+
+
+
+# #4
+# import sys
+# N, k = map(int, sys.stdin.readline().split())
+# scores = list(map(int, sys.stdin.readline().split()))
+
+# scores.sort(reverse=True)
+
+# print(scores[k-1])
+
+
+
+# #5: numpy가 안되다니.
+# import sys
+# from collections import Counter
+
+# n_row = int(sys.stdin.readline())
+# lst=[]
+# c_lst = Counter(lst)
+
+# for i in range(n_row):
+#     row = int(sys.stdin.readline())
+#     lst.append(row)
+    
+# lst.sort()
+
+# print(round(sum(lst)/n_row))
+
+# print(lst[(len(lst))//2])
+
+# c_lst = Counter(lst)
+# common = c_lst.most_common(2)
+
+# if len(common)>1:
+#     if common[0][1] == common[1][1]:
+#         print(common[1][0])
+#     else:
+#         print(common[0][0])
+# else:
+#     print(common[0][0])
+
+# lst_range = lst[len(lst)-1] - lst[0]
+# print(lst_range)
+
+
+
+# #6
+# import sys
+# N = int(sys.stdin.readline())
+# lst=[]
+
+# for i in str(N):
+#     lst.append(int(i))
+    
+# lst.sort(reverse=True)
+
+# for i in lst:
+#     print(i, end='')
+
+
+
+# #7, 8: sorted() -> 리스트 안에 리스트가 입력되면 [0]부터 순서대로 되는듯
+# import sys
+# N = int(sys.stdin.readline())
+# lst=[]
+
+# for i in range(N):
+#     [x, y] = list(map(int, sys.stdin.readline().split()))
+#     lst.append([y,x])
+
+# lst = sorted(lst)
+
+# for i in range(N):
+#     print(lst[i][1],lst[i][0])
+
+
+
+
+# #9
+# import sys
+# N = int(sys.stdin.readline())
+# lst=[]
+
+# for i in range(N):
+#     lst.append(sys.stdin.readline().strip())
+ 
+# lst_set= set(lst)
+# lst=list(lst_set)
+    
+# lst = sorted(lst)
+# lst = sorted(lst, key=len)
+
+# for i in range(len(lst)):
+#     print(lst[i])
+
+
+
+# #10
+# import sys
+# N = int(sys.stdin.readline())
+# lst = []
+
+# for i in range(N):
+#     age, name = map(str, sys.stdin.readline().split())
+#     age = int(age)
+#     lst.append([age, name])
+    
+# # lst.sort(key = lambda x : x[1])
+# lst.sort(key = lambda x : x[0])
+
+# for i in range(N):
+#     print(lst[i][0], lst[i][1])
+
+#11
+# #시간초과풀이
+# import sys
+# N = int(sys.stdin.readline())
+
+# x_list=list(map(int, sys.stdin.readline().split()))
+# x_set=set(x_list)
+# x_list2=list(x_set)
+
+# for i in range(N):
+#     count=0
+#     for j in range(len(x_list2)):
+#         if x_list[i] > x_list2[j]:
+#             count +=1
+#     print(count, end=' ')
+
+
+#dict사용
+import sys
+N = int(sys.stdin.readline())
+
+x_list=list(map(int, sys.stdin.readline().split()))
+x_set = set(x_list)
+new_list = list(x_set)
+new_list.sort()
+
+x_dict = {}
+for i in range(len(new_list)):
+    x_dict[new_list[i]] = i
+    
+for i in x_list:
+    print(x_dict[i], end=' ')

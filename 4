@@ -1,0 +1,135 @@
+# #1
+# import sys
+# count = int(input())
+# numbers = list(map(int, sys.stdin.readline().split()))
+# print(min(numbers), max(numbers))
+
+
+# #2
+# numbers=[]
+
+# for i in range(0,9):
+#     number = int(input())
+#     numbers.append(number)
+    
+# max_nb = max(numbers)
+# print(max_nb)
+# print( numbers.index(max_nb) + 1 )
+
+
+# #3
+# a = int(input())
+# b = int(input())
+# c = int(input())
+
+# abc = a*b*c
+
+# n = list(map(int, str(abc)))
+
+# for i in range(0,10):
+#     nn = n.count(i)
+#     print(nn)
+
+
+# #4
+# list = []
+# list_b = []
+# import sys
+
+# for i in range (0,10):
+#     n = int(sys.stdin.readline())
+#     list.append(n)
+
+# for j in range(0,10):
+#     m = list[j-1]%42
+#     list_b.append(m)
+    
+# list_b = set(list_b)
+# print(len(list_b))
+
+
+# #5
+# import sys
+# n_test = int(input())
+# score = list(map(int, sys.stdin.readline().split()))
+# M=max(score)
+
+# new_list = []
+# for i in range (0,n_test):
+#     new_score = score[i]/M*100
+#     new_list.append(new_score)
+
+# new_list_avg = sum(new_list) / (len(new_list))
+# print(new_list_avg)
+
+
+# #6
+# import sys
+# ox_try = int(input())
+# ox_list = []
+
+# for i in range (0,ox_try):
+#     oxox = str(input())
+#     ox_list.append(oxox)
+
+# score = 0
+# sum_score = 0
+
+# for j in range ()
+
+# #6
+
+# ox_try = int(input())
+
+# for i in range(ox_try):
+#     ox_list = list(input())
+#     score = 0  
+#     sum_score = 0
+#     for ox in ox_list:
+#         if ox == 'O':
+#             score += 1
+#             sum_score += score
+#         else:
+#             score = 0
+#     print(sum_score)
+
+
+# a = [1,2,3,4,5]
+# print(len(a))
+# print(sum(a[0:5]))
+
+# #7
+# import sys
+# C = int(input())
+# score_list = []
+
+# for i in range (C):
+#     def biggerthan(score):
+#         if score > avg_sum:
+#             return score
+        
+#     n_and_score = list(map(int, sys.stdin.readline().split()))
+#     score_sum = sum(n_and_score[1:len(n_and_score)])
+#     avg_sum = score_sum / (len(n_and_score)-1)
+        
+#     result = filter(biggerthan, n_and_score)
+#     percentage = len(list(result)) / (len(n_and_score)-1) * 100
+        
+#     print(f'{percentage:.3f}%')
+
+
+#다른풀이
+# num = int(input())
+
+# for _ in range(num):
+#     scores = list(map(int, input().split()))
+#     avg = sum(scores[1:])/scores[0]
+    
+#     cnt = 0
+#     for i in scores[1:]:
+#         if i > avg:
+#             cnt += 1
+            
+#     per = (cnt/scores[0])*100
+#     print('%.3f' %per + '%')
+
