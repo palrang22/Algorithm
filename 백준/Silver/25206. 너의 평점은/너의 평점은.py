@@ -1,43 +1,25 @@
-group_credit = []
-group_grade = []
+sum_cr = 0
+sum_score = 0
 
 for i in range(20):
-  classname, credit, grade = map(str, input().split())
-  group_credit.append(credit)
-  group_grade.append(grade)
+  _, cr, gr = map(str, input().split())
 
-for j in range(20):
-  if group_grade[j] == 'A+':
-    group_grade[j] = 4.5
-  elif group_grade[j] == 'A0':
-    group_grade[j] = 4.0
-  elif group_grade[j] == 'B+':
-    group_grade[j] = 3.5
-  elif group_grade[j] == 'B0':
-    group_grade[j] = 3.0
-  elif group_grade[j] == 'C+':
-    group_grade[j] = 2.5
-  elif group_grade[j] == 'C0':
-    group_grade[j] = 2.0
-  elif group_grade[j] == 'D+':
-    group_grade[j] = 1.5
-  elif group_grade[j] == 'D0':
-    group_grade[j] = 1.0
-  elif group_grade[j] == 'F':
-    group_grade[j] = 0.0
+  match gr:
+    case 'A+': gr = 4.5
+    case 'A0': gr = 4.0
+    case 'B+': gr = 3.5
+    case 'B0': gr = 3.0
+    case 'C+': gr = 2.5
+    case 'C0': gr = 2.0
+    case 'D+': gr = 1.5
+    case 'D0': gr = 1.0
+    case 'F': gr = 0
+
+  if gr == 'P':
+    continue
   else:
-    group_grade[j] = 10
+    cr = float(cr)
+    sum_cr += cr
+    sum_score += cr*gr
 
-group_credit = list(map(float, group_credit))
-sum_credit = 0
-for i in group_credit:
-  sum_credit += i
-score = 0
-
-for c, g in zip(group_credit, group_grade):
-  if g == 10:
-    sum_credit -= c
-  else:
-   score += (c * g)
-
-print(score / sum_credit)
+print(sum_score / sum_cr)
