@@ -8,8 +8,7 @@ N = list(N)
 N.reverse()
 
 for i in N:
-    i = li.index(i)
-    each = (B ** ind) * i
+    each = (B ** ind) * (i:=li.index(i))
     sum += each
     ind += 1
 
