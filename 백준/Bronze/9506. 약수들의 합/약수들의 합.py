@@ -1,23 +1,17 @@
-divisor = []
-
 while True:
     N = int(input())
     if N == -1:
         break
+    
+    divisor = [i for i in range(1, N) if N % i == 0]
+    # List Comprehension 사용해 한줄로 리스트 생성
+    total = sum(divisor)
+
+    if N != total:
+        print(f"{N} is NOT perfect.")
     else:
-        for i in range(1, N):
-            if N % (i) == 0:
-                divisor.append(i)
-        
-        total = sum(divisor)
-        
-        if N != total:
-            print(N,"is NOT perfect.")
-        else:
-            print(f"{N} = ", end = "")
-            for idx, k in enumerate(divisor):
-                if idx == (len(divisor)-1):
-                    print(k)
-                else:
-                    print(f"{k} +", end = " ")
-    divisor = []
+        divisors_str = " + ".join(map(str, divisor))
+        # map을 이용해 List 값들을 str 로 받고, join 이용해 사이사이에 "+" 넣기
+        print(f"{N} = {divisors_str}")
+                
+    ## 초기화 구문 삭제
