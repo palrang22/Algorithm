@@ -7,7 +7,7 @@ while True:
     elif max(a)*2 >= sum(a):
         print("Invalid")
         
-    elif sum(a) != 0:
+    else:
         match len(set(a)):
             case 1: print("Equilateral")
             case 2: print("Isosceles")
