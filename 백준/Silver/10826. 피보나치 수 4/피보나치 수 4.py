@@ -1,13 +1,14 @@
-f = []
-
 def fib_fast(n):
-    f.insert(0,0)
-    f.insert(1,1)
-    for i in range(2,n+1):
-        a = f[i-1] + f[i-2]
-        f.insert(i,a)
-        
+    if n == 0:
+        return 0
+    a = 0
+    b = 1
+    for _ in range(n-1):
+        c = b
+        b = a+b
+        a = c
+    return b
+
 n = int(input())
 
-fib_fast(n)
-print(f[n])
+print(fib_fast(n))
