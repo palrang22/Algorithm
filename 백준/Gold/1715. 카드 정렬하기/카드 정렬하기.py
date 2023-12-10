@@ -1,22 +1,20 @@
-from queue import PriorityQueue
+from heapq import heapify, heappop, heappush
  
 N = int(input())
-pq = PriorityQueue()
+A = []
 
 for _ in range(N):
     card = int(input())
-    pq.put(card)
-    
-data1 = 0
-data2 = 0
+    heappush(A, card)
+
+heapify(A)   
 sum = 0
 
-while pq.qsize() > 1 :
-    get1 = pq.get()
-    get2 = pq.get()
-    
-    temp = get1 + get2
+while len(A)>1:
+    pop1 = heappop(A)
+    pop2 = heappop(A)
+    temp = pop1 + pop2
     sum += temp
-    pq.put(temp)
+    heappush(A, temp)
     
 print(sum)
