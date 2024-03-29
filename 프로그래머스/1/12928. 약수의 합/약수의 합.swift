@@ -1,20 +1,15 @@
 import Foundation
 
-func solution(_ n:Int) -> Int {
-    
-    let num = n
+func solution(_ n: Int) -> Int {
+    var lst : Set<Int> = Set()
     var a = 1
-    var lst : [Int] = []
-    
+
     while a <= Int(sqrt(Double(n))) {
         if n % a == 0 {
-            lst.append(a)
-            lst.append(n/a)
+            lst.insert(a)
+            lst.insert(n/a)
         }
         a += 1
     }
-    
-    let setlst = Set(lst)
-    
-    return setlst.reduce(0,+)
+    return lst.reduce(0, +)
 }
