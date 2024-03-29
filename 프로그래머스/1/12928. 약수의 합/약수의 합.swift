@@ -1,15 +1,18 @@
 import Foundation
 
 func solution(_ n: Int) -> Int {
-    var lst : Set<Int> = Set()
-    var a = 1
 
-    while a <= Int(sqrt(Double(n))) {
-        if n % a == 0 {
-            lst.insert(a)
-            lst.insert(n/a)
-        }
-        a += 1
+    guard n > 1 else {
+        return n
     }
-    return lst.reduce(0, +)
+
+    var divisors = Set<Int>()
+
+    for divisor in 1...Int(sqrt(Double(n))) {
+        if n % divisor == 0 {
+            divisors.insert(divisor)
+            divisors.insert(n / divisor)
+        }
+    }
+    return divisors.reduce(0, +)
 }
