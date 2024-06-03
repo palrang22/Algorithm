@@ -1,14 +1,14 @@
 import Foundation
 
 func solution(_ n:Int, _ m:Int, _ section:[Int]) -> Int {
-    let len = section.count
+    var lenn = section.count
     var current = 0
     var count = 0
     
-    while current < len {
+    while current < lenn {
         let curVal = section[current]
         
-        while current < len && section[current] < curVal + m {
+        while current < lenn && section[current] < curVal + m {
             current += 1
         }
         
