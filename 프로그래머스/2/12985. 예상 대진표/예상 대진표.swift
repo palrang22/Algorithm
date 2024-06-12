@@ -1,19 +1,26 @@
 import Foundation
 
 func solution(_ n:Int, _ a:Int, _ b:Int) -> Int {
-    var aup = a
-    var bup = b
-    var count = 0
+    var current = n
+    var halfCurr = current / 2
+    var newa = a
+    var newb = b
     
-    while true {
-        if aup == bup {
-            break
+    while current > 1 {
+    
+        print(newa, newb)
+        
+        if ( newa <= halfCurr && newb <= halfCurr) {
+            current = halfCurr
+            halfCurr = current / 2
+        } else if newa > halfCurr && newb > halfCurr {
+            newa -= halfCurr
+            newb -= halfCurr
         } else {
-            aup = (aup+1) / 2
-            bup = (bup+1) / 2
-            count += 1
+            break
         }
+        
     }
     
-    return count
+    return Int(log(Double(current)) / log(2.0))
 }
