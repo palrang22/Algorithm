@@ -7,8 +7,6 @@ func solution(_ n:Int, _ a:Int, _ b:Int) -> Int {
     var newb = b
     
     while current > 1 {
-    
-        print(newa, newb)
         
         if ( newa <= halfCurr && newb <= halfCurr) {
             current = halfCurr
