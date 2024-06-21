@@ -8,9 +8,10 @@ func solution(_ players:[String], _ callings:[String]) -> [String] {
     
     for i in callings {
         let newRank = runDict[i]! - 1
+        let playerLose = newRun[newRank]
         if newRank >= 0 {
-            (newRun[newRank], newRun[newRank+1]) = (i, newRun[newRank])
-            (runDict[i], runDict[newRun[newRank+1]]) = (newRank, newRank + 1)
+            newRun.swapAt(newRank, newRank+1)
+            (runDict[i], runDict[playerLose]) = (newRank, newRank + 1)
         }
     }
     return newRun
