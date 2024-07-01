@@ -1,11 +1,7 @@
 import Foundation
 
 func solution(_ arr:[Int]) -> Int {
-    var lcmAll = 1
-    for i in arr {
-        lcmAll = lcm(i, lcmAll)
-    }
-    return lcmAll
+    return arr.reduce(1){lcm($0, $1)}
 }
 
 func gcd(_ x: Int, _ y: Int) -> Int {
