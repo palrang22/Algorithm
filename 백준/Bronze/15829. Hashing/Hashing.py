@@ -13,4 +13,4 @@ for i in input_list:
     result += alphabet_dict[i] * 31**exponent
     exponent += 1
 
-print(result)
+print(result%1234567891)
